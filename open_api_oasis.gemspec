@@ -4,7 +4,7 @@ require "open_api_oasis/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "open_api_oasis"
-  spec.version       = OpenApiOasis::VERSION
+  spec.version       = OpenAPIOasis::VERSION
   spec.authors       = ["Alex Braha Stoll"]
   spec.email         = ["alexbrahastoll@gmail.com"]
 
@@ -15,7 +15,6 @@ Gem::Specification.new do |spec|
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage
-  spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.

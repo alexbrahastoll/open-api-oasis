@@ -1,0 +1,37 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Deep path - three params
+  license:
+    name: MIT
+servers:
+  - url: http://example.com/v1/api
+paths:
+  /part_1/{param_1}/part_2/{param_2}/part_3/{param_3}:
+    get:
+      summary: An endpoint with 3 params.
+      operationId: endpoint_with_3_params
+      tags:
+        - 3_params
+      parameters:
+        - name: param_1
+          in: path
+          required: true
+          description: The first param.
+          schema:
+            type: integer
+        - name: param_2
+          in: path
+          required: true
+          description: The second param.
+          schema:
+            type: integer
+        - name: param_3
+          in: path
+          required: true
+          description: The third param.
+          schema:
+            type: integer
+      responses:
+        204:
+          description: A successful empty response.

@@ -1,0 +1,31 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Deep path - two ID params
+  license:
+    name: MIT
+servers:
+  - url: http://example.com/v1/api
+paths:
+  /part_1/{param_1_id}/part_2/{param_2_identifier}:
+    get:
+      summary: An endpoint with 2 params.
+      operationId: endpoint_with_2_params
+      tags:
+        - 2_params
+      parameters:
+        - name: param_1_id
+          in: path
+          required: true
+          description: The first ID param.
+          schema:
+            type: integer
+        - name: param_2_identifier
+          in: path
+          required: true
+          description: The second ID param.
+          schema:
+            type: integer
+      responses:
+        204:
+          description: A successful empty response.
