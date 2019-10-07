@@ -1,0 +1,47 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Sensitive info in the query string
+  license:
+    name: MIT
+servers:
+  - url: http://example.com/v1/api
+paths:
+  /customers:
+    get:
+      summary: Allows a partner to fetch profile info from a customer it has sold at least one product to.
+      operationId: show_customer_by_token
+      tags:
+        - customer
+      parameters:
+        - name: customer_token
+          in: query
+          required: true
+          description: A token that identifies a customer and gives access to its information.
+          schema:
+            type: string
+      responses:
+        200:
+          description: Profile information of a customer.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Customer"
+components:
+  schemas:
+    Customer:
+      description: Profile information of a customer.
+      required:
+        - name
+        - date_of_birth
+        - email
+      properties:
+        name:
+          description: The full name of a customer.
+          type: string
+        date_of_birth:
+          description: "The data of birth of a customer. Format: mm-dd-yyyy"
+          type: string
+        email:
+          description: The email of a customer.
+          type: string

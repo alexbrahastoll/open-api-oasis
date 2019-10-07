@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 RSpec.describe OpenAPIOasis::Antipattern::DeepPath do
   describe '#detect' do
     context 'three params path' do
