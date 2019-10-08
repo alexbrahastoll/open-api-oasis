@@ -1,0 +1,25 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Sequential ID - in the path
+  license:
+    name: MIT
+servers:
+  - url: http://example.com/v1/api
+paths:
+  /some_resource/{resource_id}:
+    get:
+      summary: An endpoint with 1 sequential ID path param.
+      operationId: endpoint_with_1_param
+      tags:
+        - 1_param
+      parameters:
+        - name: resource_id
+          in: path
+          required: true
+          description: The first param.
+          schema:
+            type: integer
+      responses:
+        204:
+          description: A successful empty response.
